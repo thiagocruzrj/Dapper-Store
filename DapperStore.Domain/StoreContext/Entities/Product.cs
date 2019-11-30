@@ -1,6 +1,8 @@
+using FluentValidator;
+
 namespace DapperStore.Domain.Entities.StoreContext
 {
-    public class Product
+    public class Product : Notifiable
     {
         public Product(string title,
                     string description,

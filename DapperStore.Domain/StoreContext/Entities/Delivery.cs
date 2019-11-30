@@ -1,9 +1,10 @@
 using System;
 using DapperStore.Domain.StoreContext.Entities.Enums;
+using FluentValidator;
 
 namespace DapperStore.Domain.Entities.StoreContext
 {
-    public class Delivery
+    public class Delivery : Notifiable
     {
         public Delivery(DateTime estimatedDeliveryDate)
         {

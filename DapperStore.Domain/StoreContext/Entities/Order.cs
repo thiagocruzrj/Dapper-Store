@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using DapperStore.Domain.StoreContext.Entities.Enums;
+using FluentValidator;
 
 namespace DapperStore.Domain.Entities.StoreContext
 {
-    public class Order
+    public class Order : Notifiable
     {
         private readonly IList<OrderItem> _items;
         private readonly IList<Delivery> _deliveries;
@@ -45,6 +46,8 @@ namespace DapperStore.Domain.Entities.StoreContext
             // Generating an order number
             Number = Guid.NewGuid().ToString().Replace("-","").Substring(0,8).ToUpper();
             // Validating a order
+            if(_items.Count == 0)
+                AddNotification("Order", "This order doesnt have items!");
         }
 
         // Pay an order

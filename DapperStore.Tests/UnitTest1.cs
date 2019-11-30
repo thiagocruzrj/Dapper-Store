@@ -31,14 +31,15 @@ namespace DapperStore.Tests
             var pc = new Product("pc", "lg", "image.png", 459.90M, 10);
 
             var order = new Order(c);
-            order.AddItem(new OrderItem(mouse, 5));
-            order.AddItem(new OrderItem(Teclado, 5));
-            order.AddItem(new OrderItem(cadeira, 5));
-            order.AddItem(new OrderItem(pc, 5));
-            order.AddItem(new OrderItem(Impressora, 5));
+            // order.AddItem(new OrderItem(mouse, 5));
+            // order.AddItem(new OrderItem(Teclado, 5));
+            // order.AddItem(new OrderItem(cadeira, 5));
+            // order.AddItem(new OrderItem(pc, 5));
+            // order.AddItem(new OrderItem(Impressora, 5));
 
             // Making the order
             order.Place();
+            var valid = order.IsValid;
 
             // Simulating an order
             order.Pay();
