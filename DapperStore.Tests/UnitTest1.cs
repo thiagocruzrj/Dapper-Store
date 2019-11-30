@@ -15,6 +15,8 @@ namespace DapperStore.Tests
               "thagocruz@gmail.com",
               "21969716652",
               "rua 1, 23");
+
+            var order = new Order(c);
         }
     }
 }
