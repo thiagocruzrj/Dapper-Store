@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BaltaStore.Tests
+namespace DapperStore.Tests
 {
     [TestClass]
     public class UnitTest1

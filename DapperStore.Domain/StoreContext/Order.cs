@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace BaltaStore.Domain.StoreContext
+namespace DapperStore.Domain.StoreContext
 {
     public class Order
     {

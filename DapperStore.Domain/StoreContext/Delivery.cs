@@ -1,6 +1,6 @@
 using System;
 
-namespace BaltaStore.Domain.StoreContext
+namespace DapperStore.Domain.StoreContext
 {
     public class Delivery
     {

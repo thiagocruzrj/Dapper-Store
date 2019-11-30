@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaltaStore.Api", "BaltaStore.Api\BaltaStore.Api.csproj", "{5F788B73-910A-46C9-92F9-B3A3BCE3C101}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperStore.Api", "DapperStore.Api\DapperStore.Api.csproj", "{5F788B73-910A-46C9-92F9-B3A3BCE3C101}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaltaStore.Domain", "BaltaStore.Domain\BaltaStore.Domain.csproj", "{092D30E3-9638-4BD8-AC4B-1694E868DD77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperStore.Domain", "DapperStore.Domain\DapperStore.Domain.csproj", "{092D30E3-9638-4BD8-AC4B-1694E868DD77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaltaStore.Infra", "BaltaStore.Infra\BaltaStore.Infra.csproj", "{CA63874B-FFD3-42E7-9C6B-99177593E97B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperStore.Infra", "DapperStore.Infra\DapperStore.Infra.csproj", "{CA63874B-FFD3-42E7-9C6B-99177593E97B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaltaStore.Shared", "BaltaStore.Shared\BaltaStore.Shared.csproj", "{42749162-ADFD-4E07-B973-7379A8EAEC34}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperStore.Shared", "DapperStore.Shared\DapperStore.Shared.csproj", "{42749162-ADFD-4E07-B973-7379A8EAEC34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaltaStore.Tests", "BaltaStore.Tests\BaltaStore.Tests.csproj", "{BBE62CB0-D29F-463E-92BE-CC71BD4ABD96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperStore.Tests", "DapperStore.Tests\DapperStore.Tests.csproj", "{BBE62CB0-D29F-463E-92BE-CC71BD4ABD96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

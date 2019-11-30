@@ -1,4 +1,4 @@
-namespace BaltaStore.Domain.StoreContext
+namespace DapperStore.Domain.StoreContext
 {
     public class Customer
     {

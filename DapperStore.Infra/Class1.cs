@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BaltaStore.Shared
+namespace DapperStore.Infra
 {
     public class Class1
     {
