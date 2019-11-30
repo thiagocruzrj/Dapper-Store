@@ -9,14 +9,13 @@ namespace DapperStore.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            var c = new Customer("Thiago",
-              "Cruz",
-              "12345678910",
-              "thagocruz@gmail.com",
-              "21969716652",
-              "rua 1, 23");
+            // var c = new Customer("Thiago Cruz",
+            //   "12345678910",
+            //   "thagocruz@gmail.com",
+            //   "21969716652",
+            //   "rua 1, 23");
 
-            var order = new Order(c);
+            // var order = new Order(c);
         }
     }
 }
