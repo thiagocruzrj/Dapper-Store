@@ -1,6 +1,6 @@
 using System;
 
-namespace DapperStore.Domain.StoreContext
+namespace DapperStore.Domain.Entities.StoreContext
 {
     public class Delivery
     {
