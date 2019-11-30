@@ -12,8 +12,6 @@ namespace DapperStore.Domain.Entities.StoreContext
         public Order(Customer customer)
         {
             Customer = customer;
-            // Creating a random guid, converting to string, removing -, maximum 8 characteres and put the guid in uppercase
-            Number = Guid.NewGuid().ToString().Replace("-","").Substring(0,8).ToUpper();
             CreateDate = DateTime.Now;
             Status = EOrderStatus.Created;
             _items = new List<OrderItem>();
@@ -34,14 +32,56 @@ namespace DapperStore.Domain.Entities.StoreContext
             _items.Add(order);
         }
 
-        public void Delivery(Delivery delivery)
+        // public void Delivery(Delivery delivery)
+        // {
+        //     // Validating delivery
+        //     // Add delivery
+        //     _deliveries.Add(delivery);
+        // }
+
+        // Create an order
+        public void Place()
         {
-            // Validating delivery
-            // Add delivery
-            _deliveries.Add(delivery);
+            // Generating an order number
+            Number = Guid.NewGuid().ToString().Replace("-","").Substring(0,8).ToUpper();
+            // Validating a order
         }
 
-        // To place an order
-        public void Place(){ }
+        // Pay an order
+        public void Pay()
+        {
+            //
+            Status = EOrderStatus.Paid;
+        }
+
+        // Send an order
+        public void Ship()
+        {
+            // business rule, just 5 products by delivery
+            var deliveries = new List<Delivery>();
+            deliveries.Add(new Delivery(DateTime.Now.AddDays(5)));
+            var count = 1;
+
+            // Breaking the deliveries in five products
+            foreach (var item in _items)
+            {
+                if(count == 5)
+                {
+                    count = 0;
+                    deliveries.Add(new Delivery(DateTime.Now.AddDays(5)));
+                }
+                count++;
+            }
+            // roam all deliveries that ive made and send all deliveries to order
+            deliveries.ForEach(x => x.Ship());
+            deliveries.ForEach(x => _deliveries.Add(x));
+        }
+
+        // Cancel an order
+        public void Cancel()
+        {
+            Status = EOrderStatus.Canceled;
+            _deliveries.ToList().ForEach(x => x.Cancel());
+        }
     }
 }

@@ -24,6 +24,7 @@ namespace DapperStore.Domain.Entities.StoreContext
         public Email Email { get; private set; }
         public string Phone { get; private set; }
         // bodiless function, when the fuction has only one line
+        // doesnt work with ORMs
         public IReadOnlyCollection<Address> Addresses => _addresses.ToArray();
 
         public void AddAddress(Address address)
