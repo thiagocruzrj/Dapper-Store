@@ -4,8 +4,8 @@ namespace DapperStore.Domain.Entities.StoreContext
 {
     public class Delivery
     {
-        public DateTime CreateDate { get; set; }
-        public DateTime EstimatedDeliveryDate { get; set; }
-        public string Status { get; set; }
+        public DateTime CreateDate { get; private set; }
+        public DateTime EstimatedDeliveryDate { get; private set; }
+        public string Status { get; private set; }
     }
 }

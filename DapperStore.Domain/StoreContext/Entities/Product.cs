@@ -2,10 +2,10 @@ namespace DapperStore.Domain.Entities.StoreContext
 {
     public class Product
     {
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Image { get; set; }
-        public string Price { get; set; }
-        public string QuantityOnHand { get; set; }
+        public string Title { get; private set; }
+        public string Description { get; private set; }
+        public string Image { get; private set; }
+        public string Price { get; private set; }
+        public string QuantityOnHand { get; private set; }
     }
 }
