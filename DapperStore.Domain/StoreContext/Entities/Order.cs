@@ -26,21 +26,14 @@ namespace DapperStore.Domain.Entities.StoreContext
         public IReadOnlyCollection<OrderItem> Items => _items.ToArray();
         public IReadOnlyCollection<Delivery> Deliveries => _deliveries.ToArray();
 
-        public void AddItem(OrderItem order)
+        public void AddItem(Product product, decimal quantity)
         {
-            // Validating item
-            // Add order
-            _items.Add(order);
+            if(quantity > product.QuantityOnHand)
+                AddNotification("OrderItem", $"Product {product.Title} doesnt have {quantity} items on stock.");
+            
+            var item = new OrderItem(product, quantity);
+            _items.Add(item);
         }
-
-        // public void Delivery(Delivery delivery)
-        // {
-        //     // Validating delivery
-        //     // Add delivery
-        //     _deliveries.Add(delivery);
-        // }
-
-        // Create an order
         public void Place()
         {
             // Generating an order number
@@ -53,7 +46,6 @@ namespace DapperStore.Domain.Entities.StoreContext
         // Pay an order
         public void Pay()
         {
-            //
             Status = EOrderStatus.Paid;
         }
 
