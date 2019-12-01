@@ -1,0 +1,13 @@
+
+CREATE OR REPLACE PROCEDURE spCheckDocument (
+	p_Document CHAR), cur OUT SYS_REFCURSOR
+AS
+BEGIN
+	OPEN cur FOR SELECT CASE WHEN EXISTS (
+		SELECT Id
+		FROM Customer
+		WHERE Document = p_Document
+	)
+	THEN CAST(1 AS NUMBER(1))
+	ELSE CAST(0 AS NUMBER(1)) END FROM dual;
+END;
