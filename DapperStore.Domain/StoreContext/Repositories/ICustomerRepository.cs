@@ -1,4 +1,5 @@
 using DapperStore.Domain.StoreContext.Entities;
+using DapperStore.Domain.StoreContext.Queries;
 
 namespace DapperStore.Domain.StoreContext.Repositories
 {
@@ -7,5 +8,6 @@ namespace DapperStore.Domain.StoreContext.Repositories
          bool CheckDocument(string document);
          bool CheckEmail(string email);
          void Save(Customer customer);
+         CustomerOrdersCountResult GetCustomerOrdersCount(string document);
     }
 }
