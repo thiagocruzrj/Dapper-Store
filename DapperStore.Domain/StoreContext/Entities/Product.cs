@@ -28,5 +28,9 @@ namespace DapperStore.Domain.Entities.StoreContext
             return Title;
         }
         
+        public void DecreaseQuantity(decimal quantity)
+        {
+            QuantityOnHand -= quantity;
+        }
     }
 }

@@ -54,7 +54,7 @@ namespace DapperStore.Domain.Entities.StoreContext
         {
             // business rule, just 5 products by delivery
             var deliveries = new List<Delivery>();
-            deliveries.Add(new Delivery(DateTime.Now.AddDays(5)));
+            //deliveries.Add(new Delivery(DateTime.Now.AddDays(5)));
             var count = 1;
 
             // Breaking the deliveries in five products
@@ -62,7 +62,7 @@ namespace DapperStore.Domain.Entities.StoreContext
             {
                 if(count == 5)
                 {
-                    count = 0;
+                    count = 1;
                     deliveries.Add(new Delivery(DateTime.Now.AddDays(5)));
                 }
                 count++;
