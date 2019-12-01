@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DapperStore.Domain\DapperStore.Domain.csproj" />
     <ProjectReference Include="..\DapperStore.Shared\DapperStore.Shared.csproj" />
+    <ProjectReference Include="..\DapperStore.Infra\DapperStore.Infra.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
