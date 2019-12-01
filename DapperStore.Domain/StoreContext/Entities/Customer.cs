@@ -4,7 +4,7 @@ using DapperStore.Domain.StoreContext.Entities;
 using DapperStore.Domain.StoreContext.ValueObjects;
 using FluentValidator;
 
-namespace DapperStore.Domain.Entities.StoreContext
+namespace DapperStore.Domain.StoreContext.Entities
 {
     public class Customer : Notifiable
     {

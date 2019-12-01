@@ -1,4 +1,5 @@
 using DapperStore.Domain.Entities.StoreContext;
+using DapperStore.Domain.StoreContext.Entities;
 using DapperStore.Domain.StoreContext.Entities.Enums;
 using DapperStore.Domain.StoreContext.ValueObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

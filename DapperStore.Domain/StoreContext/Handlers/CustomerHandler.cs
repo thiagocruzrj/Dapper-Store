@@ -2,6 +2,7 @@ using System;
 using DapperStore.Domain.Entities.StoreContext;
 using DapperStore.Domain.StoreContext.Commands.CustomerCommands.Input;
 using DapperStore.Domain.StoreContext.Commands.CustomerCommands.Outputs;
+using DapperStore.Domain.StoreContext.Entities;
 using DapperStore.Domain.StoreContext.ValueObjects;
 using DapperStore.Shared.Commands;
 using FluentValidator;
