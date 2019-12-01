@@ -123,6 +123,17 @@ namespace DapperStore.Tests.Entities
                 Assert.AreEqual(EOrderStatus.Canceled, x.Status);
             }
         }
-
+        
+        public void CreateCustomer()
+        {
+            // Verify if email exist
+            // Verify if CPF exist
+            // Create VOs
+            // Create Entities
+            // Validate entities and VOs
+            // Insert the costumer on DB
+            // Send Slack invite
+            // Send welcome email
+        }
     }
 }

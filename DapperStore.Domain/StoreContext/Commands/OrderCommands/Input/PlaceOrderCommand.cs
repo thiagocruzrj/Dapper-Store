@@ -22,7 +22,7 @@ namespace DapperStore.Domain.StoreContext.Commands.OrderCommands.Input
                 .HasLen(Customer.ToString(), 36, "Customer", "Client identificador invalid")
                 .IsGreaterThan(OrderItems.Count, 0, "Items", "None of items order found")
             );
-            return Valid();
+            return IsValid;
         }
     }
 

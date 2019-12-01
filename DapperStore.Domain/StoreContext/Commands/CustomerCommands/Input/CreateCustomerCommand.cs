@@ -23,7 +23,7 @@ namespace DapperStore.Domain.StoreContext.Commands.CustomerCommands.Input
                 .IsEmail(Email, "Email","Email is invalid")
                 .HasLen(Document, 11, "Document", "Invalid CPF"));
             
-            return Valid();
+            return IsValid;
         }
 
         // User exist on DB (Email)
