@@ -132,7 +132,7 @@ namespace DapperStore.Tests.Entities
             // Create VOs
             // Create Entities
             // Validate entities and VOs
-            // Insert the costumer on DB
+            // Insert the customer on DB
             // Send Slack invite
             // Send welcome email
         }
