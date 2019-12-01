@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using DapperStore.Domain.StoreContext.Entities;
 using DapperStore.Domain.StoreContext.Entities.Enums;
-using FluentValidator;
+using DapperStore.Shared.Entities;
 
 namespace DapperStore.Domain.Entities.StoreContext
 {
-    public class Order : Notifiable
+    public class Order : Entity
     {
         private readonly IList<OrderItem> _items;
         private readonly IList<Delivery> _deliveries;

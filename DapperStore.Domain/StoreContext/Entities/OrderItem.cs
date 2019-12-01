@@ -1,8 +1,8 @@
-using FluentValidator;
+using DapperStore.Shared.Entities;
 
 namespace DapperStore.Domain.Entities.StoreContext
 {
-    public class OrderItem : Notifiable
+    public class OrderItem : Entity
     {
         public OrderItem(Product product, decimal quantity)
         {

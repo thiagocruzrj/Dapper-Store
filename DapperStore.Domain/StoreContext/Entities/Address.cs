@@ -1,9 +1,9 @@
 using DapperStore.Domain.StoreContext.Entities.Enums;
-using FluentValidator;
+using DapperStore.Shared.Entities;
 
 namespace DapperStore.Domain.StoreContext.Entities
 {
-    public class Address : Notifiable
+    public class Address : Entity
     {
         public Address(string street, string number, string complement, string district, string city, string state, string country, string zipCode, EAddressType type)
         {
