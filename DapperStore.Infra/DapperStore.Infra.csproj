@@ -9,4 +9,8 @@
     <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.19.50" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DapperStore.Domain\DapperStore.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
