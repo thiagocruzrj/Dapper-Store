@@ -5,7 +5,7 @@ namespace DapperStore.Tests.Mocks
 {
     public class FakeCustomerRepository : ICustomerRepository
     {
-        public bool CheckDocumnet(string document)
+        public bool CheckDocument(string document)
         {
             return false;
         }

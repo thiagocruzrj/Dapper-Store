@@ -1,4 +1,5 @@
 using DapperStore.Domain.StoreContext.Commands.CustomerCommands.Input;
+using DapperStore.Domain.StoreContext.Handlers;
 using DapperStore.Tests.Mocks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -17,9 +18,11 @@ namespace DapperStore.Tests.Handlers
             command.Email = "thagocruz@gmail.com";
             command.Phone = "21969716652";
 
-            Assert.AreEqual(true, command.Valid());
+            var handler = new CustomerHandler(new FakeCustomerRepository(), new FakeEmailService());
+            var result = handler.Handle(command);
 
-            var handler = new customerHandler(new FakeCustomerRepository(), new FakeEmailService());
+            Assert.AreNotEqual(null, result);
+            Assert.AreEqual(true, handler.IsValid);
         }
     }
 }

@@ -22,7 +22,7 @@ namespace DapperStore.Domain.StoreContext.Handlers
         public ICommandResult Handle(CreateCustomerCommand command)
         {
             // Verify if CPF exist on DB
-            if(_repository.CheckDocumnet(command.Document))
+            if(_repository.CheckDocument(command.Document))
             AddNotification("Document", "This CPF is already in use");
 
             // Verify if Email exist on DB
