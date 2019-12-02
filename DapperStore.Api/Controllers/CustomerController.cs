@@ -23,28 +23,35 @@ namespace DapperStore.Api.Controllers
         }
         
         [HttpGet]
-        [Route("customers")]
+        [Route("v1/customers")]
         public IEnumerable<ListCustomerQueryResult> Get()
         {
             return _repository.GetList();
         }
 
         [HttpGet]
-        [Route("customers/{id}")]
-        public GetCustomerQueryResult GetById(Guid id)
+        [Route("v2/customers/{document}")]
+        public GetCustomerQueryResult GetById(Guid document)
+        {
+            return _repository.GetById(document);
+        }
+
+        [HttpGet]
+        [Route("v1/customers/{id}")]
+        public GetCustomerQueryResult GetByDocument(Guid id)
         {
             return _repository.GetById(id);
         }
 
         [HttpGet]
-        [Route("customers/{id}/orders")]
+        [Route("v1/customers/{id}/orders")]
         public IEnumerable<ListCustomerOrderQueryResult> GetOrders(Guid id)
         {
             return _repository.GetOrders(id);
         }
 
         [HttpPost]
-        [Route("customers")]
+        [Route("v1/customers")]
         public object Post([FromBody]CreateCustomerCommand command)
         {
             var result = (CreateCustomerCommandResult)_handler.Handle(command);
@@ -55,7 +62,7 @@ namespace DapperStore.Api.Controllers
         }
 
         [HttpPut]
-        [Route("customers/{id}")]
+        [Route("v1/customers/{id}")]
         public Customer Put([FromBody]CreateCustomerCommand command)
         {
             var name = new Name(command.FirstName, command.LastName);
@@ -66,7 +73,7 @@ namespace DapperStore.Api.Controllers
         }
 
         [HttpDelete]
-        [Route("customers/{id}")]
+        [Route("v1/customers/{id}")]
         public object Delete()
         {
             return new { message = "Customer removed with sucess!"};
