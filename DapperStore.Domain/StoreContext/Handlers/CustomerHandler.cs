@@ -43,7 +43,8 @@ namespace DapperStore.Domain.StoreContext.Handlers
             AddNotifications(email.Notifications);
             AddNotifications(customer.Notifications);
 
-            if(Invalid) return null;
+            if(Invalid) return new CreateCustomerCommandResult(false, "Please, correcty the fields below ", Notifications);
+            
             // Persist the customer on DB
             _repository.Save(customer);
 
@@ -51,7 +52,11 @@ namespace DapperStore.Domain.StoreContext.Handlers
             _emailService.Send(email.Address, "thagocruz@gmail.com", "Welcome", "Test email");
 
             // Return result to screen
-            return new CreateCustomerCommandResult(customer.Id, name.ToString(), email.Address);
+            return new CreateCustomerCommandResult(true, "Welcome To Dapper Store", new{
+                Id = customer.Id,
+                Name = name.ToString(),
+                Email = email.Address
+            });
         }
 
         public ICommandResult Handle(AddAddressCommand command)
