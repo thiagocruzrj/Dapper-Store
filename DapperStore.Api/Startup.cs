@@ -17,6 +17,8 @@ namespace DapperStore.Api
         {
             services.AddControllers();
 
+            services.AddResponseCompression();
+
             services.AddScoped<OracleDataConnection, OracleDataConnection>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<IEmailService, EmailService>();
@@ -35,6 +37,8 @@ namespace DapperStore.Api
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
             });
+
+            app.UseResponseCompression();
         }
     }
 }
