@@ -1,3 +1,4 @@
+using DapperStore.Domain.StoreContext.Handlers;
 using DapperStore.Domain.StoreContext.Repositories;
 using DapperStore.Domain.StoreContext.Services;
 using DapperStore.Infra.Services;
@@ -19,6 +20,7 @@ namespace DapperStore.Api
             services.AddScoped<OracleDataConnection, OracleDataConnection>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<IEmailService, EmailService>();
+            services.AddTransient<CustomerHandler, CustomerHandler>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
