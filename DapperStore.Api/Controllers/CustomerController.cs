@@ -24,6 +24,9 @@ namespace DapperStore.Api.Controllers
         
         [HttpGet]
         [Route("v1/customers")]
+        // Caching on client [ResponseCache(Location = ResponseCacheLocation.Client, Duration = 60)]
+        [ResponseCache(Duration = 60)]
+        // Cache-Control: public, max-age=64
         public IEnumerable<ListCustomerQueryResult> Get()
         {
             return _repository.GetList();
