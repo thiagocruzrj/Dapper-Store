@@ -1,9 +1,11 @@
+using System;
 using DapperStore.Domain.StoreContext.Handlers;
 using DapperStore.Domain.StoreContext.Repositories;
 using DapperStore.Domain.StoreContext.Services;
 using DapperStore.Infra.Services;
 using DapperStore.Infra.StoreContext.DataConnection;
 using DapperStore.Infra.StoreContext.Repositories;
+using Elmah.Io.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,6 +30,12 @@ namespace DapperStore.Api
             services.AddSwaggerGen(x => {
                 x.SwaggerDoc("v1", new OpenApiInfo {Title = "My Api", Version = "v1"});
             });
+
+            services.AddElmahIo(o =>
+            {
+                o.ApiKey = "bd77c1c4b77d41aba665e8503791108c";
+                o.LogId = new Guid("8dc4b1e9-187e-49b2-83ba-a9bffaa3d7d0");
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -48,6 +56,8 @@ namespace DapperStore.Api
             app.UseSwaggerUI( c=> {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dapper Store - V1");
             });
+
+            app.UseElmahIo();
         }
     }
 }
