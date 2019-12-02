@@ -19,8 +19,9 @@ namespace DapperStore.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
             services.AddResponseCompression();
+
+            services.AddApplicationInsightsTelemetry();
 
             services.AddScoped<OracleDataConnection, OracleDataConnection>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
