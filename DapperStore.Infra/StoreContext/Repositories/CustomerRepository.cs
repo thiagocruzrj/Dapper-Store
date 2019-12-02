@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using Dapper;
@@ -40,6 +42,15 @@ namespace DapperStore.Infra.StoreContext.Repositories
                 .FirstOrDefault();
         }
 
+        public GetCustomerQueryResult GetById(Guid id)
+        {
+            return 
+                _context
+                .Connection
+                .Query<GetCustomerQueryResult>("SELECT Id, FirstName || ' ' || LastName AS [Name], Document, Email FROM Customer WHERE Id=@id", new { id = id })
+                .FirstOrDefault();
+        }
+
         public CustomerOrdersCountResult GetCustomerOrdersCount(string document)
         {
             return 
@@ -50,6 +61,24 @@ namespace DapperStore.Infra.StoreContext.Repositories
                     new { Document = document},
                     commandType: CommandType.StoredProcedure)
                 .FirstOrDefault();
+        }
+
+        public IEnumerable<ListCustomerQueryResult> GetList()
+        {
+            return 
+                _context
+                .Connection
+                .Query<ListCustomerQueryResult>(
+                    "SELECT Id, CONCATENATE(FirstName,' ', Lastname), Document, Email FROM Customer", new{});
+        }
+
+        public IEnumerable<ListCustomerOrderQueryResult> GetOrders(Guid id)
+        {
+            return 
+                _context
+                .Connection
+                .Query<ListCustomerOrderQueryResult>(
+                    "", new{});
         }
 
         public void Save(Customer customer)
